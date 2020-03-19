@@ -13,7 +13,9 @@ And yet, until now we skated over the matter of where are data comes from in the
 Too often in the practice of machine learning, developers rush ahead with the development of models tossing these fundamental considerations aside.
 -->
 
-*dịch đoạn phía trên*
+Trong các chương trước, chúng ta đã xem xét một số triển khai thực tiễn trong việc áp dụng những mô hình học máy phù hợp cho một vài loại dữ liệu khác nhau.
+Nhưng cho tới nay, chúng ta đã bỏ qua vấn đề về việc dữ liệu đến từ đâu khi bắt đầu, và sau cùng chúng ta dự định làm gì với kết quả đầu ra từ những mô hình đó.
+Trong thực tế, các nhà phát triển rất thường xuyên gạt những cân nhắc cơ bản này sang một bên để vội vàng đi xây dựng các mô hình.
 
 <!--
 Many failed machine learning deployments can be traced back to this situation.
