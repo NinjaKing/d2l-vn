@@ -5,7 +5,7 @@
 # Considering the Environment
 -->
 
-# *dịch tiêu đề phía trên*
+# Xem xet môi trường
 
 <!--
 So far, we have worked through a number of hands-on implementations fitting machine learning models to a variety of datasets.
