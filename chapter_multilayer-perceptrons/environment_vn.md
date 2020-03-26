@@ -29,7 +29,15 @@ Before long, all applicants would be wearing Oxfords, and yet there would be no 
 Think about this deeply because similar issues abound in the application of machine learning: by introducing our model-based decisions to the environment, we might break the model.
 -->
 
-*dịch đoạn phía trên*
+Rất nhiều sự thất bại trong triển khai học máy có thể bắt nguồn từ việc này.
+Đôi khi một mô hình hoạt động tốt khi được đánh giá bằng độ chính xác kiểm thử lại thất bại thảm hại trong thực tiễn khi mà phân phối dữ liệu đột ngột thay đổi.
+Nguy hiểm hơn, thỉnh thoảng chính việc triển khai một mô hình có thể là nhân tố gây nhiễu cho phân phối của dữ liệu.
+Ví dụ, chúng ta đã huấn luyện một mô hình để dự báo khả năng vỡ nợ, nhận thấy rằng việc lựa chọn đi giày gì có liên quan đến rủi ro vỡ nợ (đi giày Oxfords có khả năng hoàn trả nợ hơn, đi giày thể thao có khả năng vỡ nợ hơn).
+Từ đó chúng ta có thể ưu tiên duyệt các khoản vay cho những người đi giày Oxfords và từ chối tất cả những người đi giày thể thao.
+Nhưng bước nhảy vội vàng của chúng ta từ nhận dạng mẫu đến ra quyết định và sự thất bại trong việc suy nghĩ nghiêm túc về môi trường có thể gây hậu quả tai hại.
+Ban đầu, ngay khi chúng ta bắt đầu đưa ra quyết định dựa trên việc đi giày, khách hàng có thể sẽ nắm bắt được điều đó và thay đổi hành vi của họ.
+Chẳng bao lâu sau, tất cả người xin vay tiền sẽ đều đi giày Oxfords, nhưng những giá trị liên quan đến tín dụng thì chẳng có sự cải thiện nào cả.
+Hãy suy nghĩ kỹ càng về điều này bởi vì các vấn đề tương tự có rất nhiều trong việc áp dụng học máy: bằng cách đưa ra các quyết định dựa trên mô hình của chúng ta vào môi trường, chúng ta có thể phá vỡ mô hình đó.
 
 <!--
 In this section, we describe some common concerns and aim to get you started acquiring the critical thinking that 
@@ -38,7 +46,8 @@ Some of the solutions are simple (ask for the "right" data) some are technically
 and others require that we enter the realm of philosophy and grapple with difficult questions concerning ethics and informed consent.
 -->
 
-*dịch đoạn phía trên*
+Trong phần này, chúng ta sẽ mô tả một vài mối quan tâm và mục đích chung để bạn có thể bắt đầu có được suy nghĩ nghiêm túc cần thiết để giúp phát hiện sớm những tình huống này, giảm thiểu thiệt hại, và sử dụng học máy một cách có trách nhiệm.
+Một số giải pháp rất đơn giảm (yêu cầu dữ liệu "đúng"), một số giải pháp thì khó về mặt kỹ thuật (cài đặt hệ thống học tăng cường), và một số khác nữa thì yêu cầu chúng ta bước chân vào vương quốc của triết học và vật lộn với những câu hỏi khó liên quan đến đạo đức và sự đồng thuận.
 
 <!-- ===================== Kết thúc dịch Phần 1 ===================== -->
 
@@ -48,7 +57,7 @@ and others require that we enter the realm of philosophy and grapple with diffic
 ## Distribution Shift
 -->
 
-## *dịch tiêu đề phía trên*
+## Dịch chuyển phân phối
 
 <!--
 To begin, we return to the observational setting, putting aside for now the impacts of our actions on the environment.
@@ -61,7 +70,11 @@ Fortunately, under some restricted assumptions on the ways our data might change
 principled algorithms can detect shift and possibly even adapt, achieving higher accuracy than if we naively continued to rely on our original classifier.
 -->
 
-*dịch đoạn phía trên*
+Để bắt đầu, chúng ta quay trở lại với các thiết lập quan sát, tạm thời bỏ qua các tác động từ hành động của chúng ta đến môi trường.
+Trong các phần tiếp theo, chúng ta sẽ xem xét sâu hơn về các cách khác nhau mà phân phối dữ liệu có thể bị thay đổi và những gì có thể được thực hiện hiện để cứu vãn chất lượng của mô hình.
+Ngay từ đầu, chúng ta nên cảnh báo nếu phân phối của bộ dữ liệu mô phỏng <!-- data-generating??? --> $p(\mathbf{x},y)$ có thể dịch chuyển tùy ý tại bất kỳ thời điểm nào, thì việc tạo ra một bộ phân loại mạnh mẽ là điều không thể.
+Trong trường hợp bết bát nhất, nếu bản thân những định nghĩa nhãn có thể thay đổi tại một thời điểm nào đó, chú ý: nếu đột nhiên những gì ta gọi là "mèo" bây giờ là "chó" và những gì ta gọi là "chó" trước đây thực tế là mèo, mà không có bất kỳ thay đổi rõ ràng nào trong phân phối đầu vào $p(\mathbf{x})$, vì thế chúng ta không thể làm gì để phát hiện sự thay đổi hoặc để sửa lỗi bộ phân loại của chúng ta tại thời điểm kiểm thử.
+May mắn thay, theo một số giả định hạn chế về những cách dữ liệu có thể thay đổi trong tương lai, các thuật toán cơ bản có thể phát hiện được sự dịch chuyển và thậm chí có thể thích nghi, đạt được độ chính xác cao hơn so với việc nếu cứ tiếp tục đơn thuần dựa vào bộ phân loại ban đầu của chúng ta.
 
 <!-- ========================================= REVISE PHẦN 1 - KẾT THÚC ===================================-->
 
@@ -71,7 +84,7 @@ principled algorithms can detect shift and possibly even adapt, achieving higher
 ### Covariate Shift
 -->
 
-### *dịch tiêu đề phía trên*
+### Dịch chuyển hiệp biến
 
 <!--
 One of the best-studied forms of distribution shift is *covariate shift*.
@@ -81,7 +94,11 @@ Consider the challenge of distinguishing cats and dogs.
 Our training data consists of images of the following kind:
 -->
 
-*dịch đoạn phía trên*
+Một trong những hình thức dịch chuyển phân phối đã được nghiên cứu tốt nhất là *dịch chuyển hiệp biến*.
+Ở đây, chúng ta giả định rằng mặc dù các phân phối đầu vào có thể thay đổi theo thời gian, hàm đánh nhãn phân phối có điều kiện $P(y \mid \mathbf{x})$ không thay đổi.
+Vấn đề này khá dễ hiểu, và cũng dễ dàng để giám sát nó trong thực tế.
+Hãy xem xét thử thách phân biệt chó và mèo.
+Bộ dữ liệu huấn luyện của chúng ta bao gồm các loại hình ảnh sau:
 
 <!--
 |cat|cat|dog|dog|
@@ -89,13 +106,15 @@ Our training data consists of images of the following kind:
 |![](../img/cat3.jpg)|![](../img/cat2.jpg)|![](../img/dog1.jpg)|![](../img/dog2.jpg)|
 -->
 
-*dịch đoạn phía trên*
+|mèo|mèo|chó|chó|
+|:---------------:|:---------------:|:---------------:|:---------------:|
+|![](../img/cat3.jpg)|![](../img/cat2.jpg)|![](../img/dog1.jpg)|![](../img/dog2.jpg)|
 
 <!--
 At test time we are asked to classify the following images:
 -->
 
-*dịch đoạn phía trên*
+Nhưng lúc kiểm thử, chúng cần phân loại những hình ảnh sau:
 
 <!--
 |cat|cat|dog|dog|
@@ -103,7 +122,9 @@ At test time we are asked to classify the following images:
 |![](../img/cat-cartoon1.png)|![](../img/cat-cartoon2.png)|![](../img/dog-cartoon1.png)|![](../img/dog-cartoon2.png)|
 -->
 
-*dịch đoạn phía trên*
+|mèo|mèo|chó|chó|
+|:---------------:|:---------------:|:---------------:|:---------------:|
+|![](../img/cat-cartoon1.png)|![](../img/cat-cartoon2.png)|![](../img/dog-cartoon1.png)|![](../img/dog-cartoon2.png)|
 
 <!--
 Obviously this is unlikely to work well.
@@ -116,7 +137,14 @@ Mathematically, we could say that $P(\mathbf{x})$ changes but that $P(y \mid \ma
 Although its usefulness is not restricted to this setting, when we believe $\mathbf{x}$ causes $y$, covariate shift is usually the right assumption to be working with.
 -->
 
-*dịch đoạn phía trên*
+Rõ ràng là nó không có khả năng hoạt động tốt.
+Tập huấn luyện bao gồm các ảnh chụp, trong khi tập kiểm thử chỉ chứa các hình ảnh hoạt hình.
+Màu sắc thậm chí còn không thực tế chút nào.
+Huấn luyện trên một tập dữ liệu khác biệt rõ ràng so với tập kiểm thử mà không có một kế hoạch nào để thích nghi với miền dữ liệu mới là một ý tưởng tồi tệ.
+Thật không may, đây lại là một cạm bẫy rất phổ biến.
+Các nhà thống kê gọi điều này là *sự dịch chuyển hiệp biến* bởi vì gốc rễ của vấn đề là do sự dịch chuyển trong phân phối các đặc trưng.
+Về mặt toán học, chúng ta có thể nói rằng $P(\mathbf{x})$ thay đổi nhưng $P(y \mid \mathbf{x})$ không thay đổi.
+Mặc dù, tính hữu dụng của nó không bị hạn chế trong thiết lập này, nhưng khi chúng ta tin rằng $\mathbf{x}$ suy ra $y$, dịch chuyển hiệp biến thường là giả định đúng đắn.
 
 <!-- ===================== Kết thúc dịch Phần 2 ===================== -->
 
@@ -126,7 +154,7 @@ Although its usefulness is not restricted to this setting, when we believe $\mat
 ### Label Shift
 -->
 
-### *dịch tiêu đề phía trên*
+### Dịch chuyển nhãn
 
 <!--
 The converse problem emerges when we believe that what drives the shift is a change in the marginal distribution over 
@@ -141,9 +169,14 @@ That is because these methods tend to involve manipulating objects that look lik
 to be comparatively easy compared to working with the objects that look like the input, which tends (in deep learning) to be a high-dimensional object.
 -->
 
-*dịch đoạn phía trên*
-
-
+Vấn đề ngược lại xuất hiện khi chúng ta tin rằng nguyên nhân của sự dịch chuyển là một thay đổi trông phân phối biên trên các nhãn $P(y)$ nhưng các phân phối lớp có điều kiện là bất biến $P(\mathbf{x} \mid y)$.
+Dịch chuyển nhãn là một giả định hợp lý cần đưa ra khi chúng ta tin rằng $y$ suy ra $\mathbf{x}$.
+Ví dụ, thông thường chúng ta muốn đưa ra một chẩn đoán bệnh dựa trên các biểu hiện của nó.
+Trong trường hợp này, chúng ta tin rằng bệnh tật gây ra các triệu chứng đó.
+Thỉnh thoảng giả định dịch chuyển nhãn và dịch chuyển hiệp biến có thể xảy ra đồng thời.
+Chẳng hạn, khi hàm gán nhãn chuẩn <!-- the true labeling function? --> là xác định và không thay đổi, thì dịch chuyển hiệp biến luôn luôn đúng, ngay cả khi có sự dịch chuyển nhãn.
+Thật thú vị khi chúng ta mong đợi cả dịch chuyển nhãn và dịch chuyển hiệp biến đều xảy ra, thì ta thường có lợi khi làm việc với các phương pháp có được từ giả định dịch chuyển nhãn.
+Đó là bởi vì các phương pháp này có xu hướng liên quan điến việc thao túng các đối tượng trông giống như nhãn, việc này (trong học sâu) là tương đối dễ dàng so với làm việc cùng các đối tượng trông giống như đầu vào, điều mà (trong học sâu) dẫn tới một đối tượng nhiều chiều.
 
 <!--
 ### Concept Shift
